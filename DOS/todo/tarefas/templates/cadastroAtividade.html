@@ -1,0 +1,23 @@
+<form method="POST", action="cadastroAtividade">
+{% csrf_token%}
+<label for="titulo">Titulo
+<input type="text" name="titulo" id="titulo">
+</label><br>
+
+<label for="descricao">Descricao
+<input type="text" name="descricao" id="descricao">
+</label><br>
+
+<label for="data">Data
+<input type="date" name="data" id="data">
+</label><br>
+
+<label for="usuario">Usuário
+<select name="usuario"> 
+    {% for usuario in usuarios%}
+        <option value="{{usuario.id}}">{{usuario.nome}}</option>
+    {%endfor%}
+</select></label><br>
+
+<input type="submit" name="salvar">
+</form>
